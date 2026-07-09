@@ -11,7 +11,7 @@ export const site = {
   mapsEmbedUrl:
     'https://www.google.com/maps?q=Naturals+Beauty+Salon+Arulananda+Nagar+Thanjavur+613007&output=embed',
   mapsLink: 'https://maps.google.com/?q=Naturals+Beauty+Salon+Arulananda+Nagar+Thanjavur+613007',
-  instagram: 'https://instagram.com/naturals_salon',
-  facebook: 'https://facebook.com',
+  instagram: 'https://www.instagram.com/naturals.thanjavur',
+  facebook: 'https://www.facebook.com/naturals.thanjavur/',
   hours: 'Mon - Sat: 9:00 AM - 8:00 PM · Sunday: 10:00 AM - 6:00 PM',
 }
