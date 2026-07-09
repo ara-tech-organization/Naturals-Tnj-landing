@@ -94,7 +94,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-10">
           <a
             href={site.phoneLink}
             className="flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white transition-colors"

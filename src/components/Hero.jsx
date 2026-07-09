@@ -32,7 +32,7 @@ export default function Hero() {
 
           <p className="mt-5 text-lg text-white/85 max-w-xl">
             From everyday styling to your wedding day — expert stylists, transparent pricing,
-            and 15+ years of experience trusted by Thanjavur families.
+            and 3+ years of experience trusted by Thanjavur families.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -69,7 +69,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-1.5 text-sm font-medium text-white/80">
               <ShieldCheck className="size-4 text-brand-300" />
-              15+ Years in Thanjavur
+              3+ Years in Thanjavur
             </div>
           </div>
         </div>

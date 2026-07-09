@@ -2,7 +2,7 @@ import { CalendarCheck, Star, Users, Award } from 'lucide-react'
 
 const ITEMS = [
   { icon: Star, text: '4.7/5 on Google (200+ reviews)' },
-  { icon: Award, text: '15+ Years in Thanjavur' },
+  { icon: Award, text: '3+ Years in Thanjavur' },
   { icon: Users, text: '10,000+ Happy Clients' },
   { icon: CalendarCheck, text: 'Open 7 Days' },
 ]

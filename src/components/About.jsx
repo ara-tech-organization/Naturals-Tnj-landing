@@ -4,7 +4,7 @@ import Reveal from './Reveal'
 
 const STATS = [
   { icon: Users, value: '10,000+', label: 'Happy Customers' },
-  { icon: Award, value: '15+', label: 'Years of Experience' },
+  { icon: Award, value: '3+', label: 'Years of Experience' },
   { icon: HeartHandshake, value: '1,000+', label: 'Bridal Makeovers' },
 ]
 
@@ -30,7 +30,7 @@ const MILESTONES = [
   {
     year: 'Today',
     icon: Gem,
-    title: '15+ Years Strong',
+    title: '3+ Years Strong',
     text: "Still Thanjavur's most trusted name in beauty, styling & grooming.",
   },
 ]
@@ -50,7 +50,7 @@ export default function About() {
               Why Thanjavur Chooses Naturals
             </span>
             <h2 className="mt-4 text-3xl lg:text-4xl font-bold tracking-tight text-ink leading-tight">
-              15 Years of Trust, <span className="text-gradient-brand">One Salon at a Time</span>
+              3 Years of Trust, <span className="text-gradient-brand">One Salon at a Time</span>
             </h2>
             <span className="block w-14 h-1.5 rounded-full gradient-brand mt-4" />
             <p className="mt-5 text-ink-soft text-lg leading-relaxed max-w-lg">
@@ -81,7 +81,7 @@ export default function About() {
                   <ShieldCheck className="size-5 text-white" strokeWidth={2.25} />
                 </div>
                 <div>
-                  <div className="font-bold text-ink leading-none">15+ Years</div>
+                  <div className="font-bold text-ink leading-none">3+ Years</div>
                   <div className="text-xs text-ink-soft mt-1">Trusted in Thanjavur</div>
                 </div>
               </div>

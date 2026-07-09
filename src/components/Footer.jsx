@@ -40,10 +40,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-16 pb-10 grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src={logo} alt={site.name} className="h-10 w-auto object-contain" />
-            <span className="font-semibold text-lg text-white">
-              Naturals <span className="text-brand-300">Thanjavur</span>
-            </span>
+            <img src={logo} alt={site.name} className="h-16 w-auto object-contain" />
           </div>
           <p className="text-sm leading-relaxed max-w-xs">
             Thanjavur's trusted salon since 2009 — hair, bridal &amp; grooming experts serving
