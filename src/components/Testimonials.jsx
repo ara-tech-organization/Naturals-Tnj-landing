@@ -37,7 +37,7 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-3 gap-7">
           {REVIEWS.map(({ name, initials, text }, i) => (
             <Reveal key={name} delay={i * 120}>
-              <div className="group relative h-full rounded-3xl bg-white border border-brand-100 p-7 shadow-sm hover:shadow-xl hover:shadow-brand-900/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="group relative h-full flex flex-col rounded-3xl bg-white border border-brand-100 p-7 shadow-sm hover:shadow-xl hover:shadow-brand-900/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-1 gradient-brand scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
                 <Quote className="size-7 text-brand-200 mb-3" fill="currentColor" strokeWidth={0} />
                 <div className="flex text-accent-500 mb-3">
@@ -46,7 +46,7 @@ export default function Testimonials() {
                   ))}
                 </div>
                 <p className="text-ink-soft leading-relaxed">{text}</p>
-                <div className="mt-6 flex items-center gap-3">
+                <div className="mt-auto pt-6 flex items-center gap-3">
                   <div className="size-10 rounded-full gradient-brand flex items-center justify-center text-white text-sm font-semibold shrink-0">
                     {initials}
                   </div>

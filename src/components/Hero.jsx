@@ -17,25 +17,25 @@ export default function Hero() {
       <div className="absolute -top-24 -right-24 size-96 rounded-full bg-brand-400/20 blur-3xl -z-10 animate-float" />
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-[1fr_1.15fr] gap-12 items-center">
-        <div className="animate-fade-up">
+        <div className="animate-fade-up text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm text-white text-xs font-semibold px-4 py-1.5 mb-6 ring-1 ring-white/25">
             <Sparkles className="size-3.5" />
-            Thanjavur's Most Trusted Salon Since 2009
+            Thanjavur's Most Trusted Salon Since 2023
           </span>
 
           <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.08] tracking-tight text-white">
             Look Your Best for{' '}
-            <span className="text-gradient-brand bg-gradient-to-r from-brand-300 to-accent-400 bg-clip-text text-transparent">
+            <span className="text-gradient-brand" style={{ WebkitTextStroke: '0.6px rgba(0, 0, 0, 0.7)' }}>
               Every Occasion
             </span>
           </h1>
 
-          <p className="mt-5 text-lg text-white/85 max-w-xl">
+          <p className="mt-5 text-lg text-white/85 max-w-xl mx-auto lg:mx-0">
             From everyday styling to your wedding day — expert stylists, transparent pricing,
             and 3+ years of experience trusted by Thanjavur families.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
             <a
               href="/"
               onClick={(e) => {
@@ -58,7 +58,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-9 flex items-center gap-6 flex-wrap">
+          <div className="mt-9 flex items-center justify-center lg:justify-start gap-6 flex-wrap">
             <div className="flex items-center gap-1.5 text-sm font-medium text-white">
               <div className="flex text-accent-400">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -74,7 +74,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="animate-fade-up lg:justify-self-end w-full max-w-lg" style={{ animationDelay: '150ms' }}>
+        <div
+          className="animate-fade-up mx-auto lg:mx-0 lg:justify-self-end w-full max-w-lg mt-12 lg:mt-0"
+          style={{ animationDelay: '150ms' }}
+        >
           <div className="relative">
             <div className="absolute -inset-3 gradient-brand rounded-[2rem] opacity-30 blur-xl -z-10" />
             <div

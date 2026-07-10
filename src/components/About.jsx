@@ -10,28 +10,28 @@ const STATS = [
 
 const MILESTONES = [
   {
-    year: '2009',
+    year: '2023',
     icon: Sprout,
-    title: 'Where It Began',
-    text: 'Opened our first chair in Thanjavur with one promise — honest, expert care.',
+    title: 'Grand Opening',
+    text: 'Opened our Naturals Salon in Thanjavur, bringing world-class beauty, hair, and grooming services to the city.',
   },
   {
-    year: '2015',
+    year: '2024',
     icon: Rocket,
-    title: 'Growing Fast',
-    text: 'Expanded into bridal, skin & grooming as word of mouth spread across the city.',
+    title: '1,000+ Happy Clients',
+    text: 'Built lasting relationships with satisfied customers through expert care and personalized services.',
   },
   {
-    year: '2020',
+    year: '2025',
     icon: Users,
-    title: '10,000+ Clients',
-    text: 'Crossed ten thousand happy customers who trusted us with their look.',
+    title: 'Growing Strong',
+    text: 'Expanded our services and continued to become a trusted destination for hair, skin, bridal, and grooming.',
   },
   {
     year: 'Today',
     icon: Gem,
-    title: '3+ Years Strong',
-    text: "Still Thanjavur's most trusted name in beauty, styling & grooming.",
+    title: 'Your Trusted Beauty Partner',
+    text: 'Continuing our journey with thousands of happy smiles, expert professionals, and premium salon experiences every day.',
   },
 ]
 
@@ -44,7 +44,7 @@ export default function About() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         {/* Intro: text left, motion image right */}
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          <Reveal className="lg:col-span-6">
+          <Reveal className="lg:col-span-6 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-100/80 text-brand-700 text-xs font-semibold px-4 py-1.5">
               <Sparkles className="size-3.5" />
               Why Thanjavur Chooses Naturals
@@ -52,9 +52,9 @@ export default function About() {
             <h2 className="mt-4 text-3xl lg:text-4xl font-bold tracking-tight text-ink leading-tight">
               3 Years of Trust, <span className="text-gradient-brand">One Salon at a Time</span>
             </h2>
-            <span className="block w-14 h-1.5 rounded-full gradient-brand mt-4" />
-            <p className="mt-5 text-ink-soft text-lg leading-relaxed max-w-lg">
-              Since 2009, we've helped thousands of clients in Thanjavur look and feel their best —
+            <span className="block w-14 h-1.5 rounded-full gradient-brand mt-4 mx-auto lg:mx-0" />
+            <p className="mt-5 text-ink-soft text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+              Since 2023, we've helped thousands of clients in Thanjavur look and feel their best —
               from everyday haircuts to once-in-a-lifetime bridal transformations. Every stylist on
               our team is certified and trained in the latest techniques, and every treatment uses
               premium, salon-grade products.

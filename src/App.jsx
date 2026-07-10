@@ -5,7 +5,6 @@ import TrustStrip from './components/TrustStrip'
 import About from './components/About'
 import Services from './components/Services'
 import HowItWorks from './components/HowItWorks'
-import Offer from './components/Offer'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import ContactCTA from './components/ContactCTA'
@@ -37,7 +36,6 @@ function App() {
         <About />
         <Services />
         <HowItWorks />
-        <Offer />
         <Testimonials />
         <FAQ />
         <ContactCTA />
