@@ -1,22 +1,49 @@
 import { useState } from 'react'
-import { AlertCircle, Calendar, Loader2 } from 'lucide-react'
+import { AlertCircle, Calendar, Loader2, MapPin, MessageSquare, Phone, Send, ShieldCheck, User } from 'lucide-react'
 import { navigate } from '../utils/navigate'
 
-const initialState = { name: '', email: '', phone: '', city: '', date: '', message: '' }
+const initialState = { name: '', phone: '', city: '', date: '', message: '' }
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PHONE_RE = /^[0-9+\-\s]{7,15}$/
 
 function validate(values) {
   const errors = {}
   if (!values.name.trim()) errors.name = 'Name is required'
-  if (!values.email.trim()) errors.email = 'Email is required'
-  else if (!EMAIL_RE.test(values.email.trim())) errors.email = 'Enter a valid email address'
   if (!values.phone.trim()) errors.phone = 'Phone number is required'
   else if (!PHONE_RE.test(values.phone.trim())) errors.phone = 'Enter a valid phone number'
   if (!values.city.trim()) errors.city = 'City is required'
   if (!values.date) errors.date = 'Appointment date is required'
   return errors
+}
+
+function Field({ icon: Icon, label, error, alignTop = false, children }) {
+  return (
+    <div>
+      <div
+        className={`flex gap-3 rounded-2xl border bg-white px-4 py-3 transition-all ${
+          alignTop ? 'items-start' : 'items-center'
+        } ${
+          error
+            ? 'border-red-300 ring-4 ring-red-50'
+            : 'border-brand-100 focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100'
+        }`}
+      >
+        <div className={`size-9 rounded-full bg-brand-50 flex items-center justify-center shrink-0 ${alignTop ? 'mt-0.5' : ''}`}>
+          <Icon className="size-4.5 text-brand-500" strokeWidth={2.25} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <label className="block text-sm font-semibold text-ink">{label}</label>
+          {children}
+        </div>
+      </div>
+      {error && (
+        <p className="mt-1.5 ml-1 flex items-center gap-1 text-xs text-red-500">
+          <AlertCircle className="size-3.5 shrink-0" />
+          {error}
+        </p>
+      )}
+    </div>
+  )
 }
 
 export default function BookingForm({ compact = false }) {
@@ -44,7 +71,6 @@ export default function BookingForm({ compact = false }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: form.name.trim(),
-          email: form.email.trim(),
           phone: form.phone.trim(),
           city: form.city.trim(),
           date: form.date,
@@ -65,83 +91,53 @@ export default function BookingForm({ compact = false }) {
     setStatus('idle')
   }
 
-  const inputClass = (key) =>
-    `w-full rounded-xl border bg-white px-4 py-3.5 text-sm text-ink placeholder:text-ink-soft/60 outline-none focus:ring-4 transition-all ${
-      errors[key]
-        ? 'border-red-300 focus:border-red-400 focus:ring-red-100'
-        : 'border-brand-100 focus:border-brand-400 focus:ring-brand-100'
-    }`
-
-  const FieldError = ({ field }) =>
-    errors[field] ? (
-      <p className="mt-1.5 flex items-center gap-1 text-xs text-red-500">
-        <AlertCircle className="size-3.5 shrink-0" />
-        {errors[field]}
-      </p>
-    ) : null
+  const fieldInputClass = 'w-full bg-transparent outline-none border-0 p-0 text-sm text-ink placeholder:text-ink-soft/50'
 
   return (
     <form onSubmit={handleSubmit} noValidate className={compact ? 'space-y-3' : 'space-y-4'}>
-      <div>
+      <Field icon={User} label="Name *" error={errors.name}>
         <input
           type="text"
-          placeholder="Name *"
+          placeholder="Enter your full name"
           value={form.name}
           onChange={update('name')}
-          className={inputClass('name')}
+          className={fieldInputClass}
         />
-        <FieldError field="name" />
-      </div>
+      </Field>
 
-      <div>
-        <input
-          type="email"
-          placeholder="Email Address *"
-          value={form.email}
-          onChange={update('email')}
-          className={inputClass('email')}
-        />
-        <FieldError field="email" />
-      </div>
-
-      <div>
+      <Field icon={Phone} label="Phone Number *" error={errors.phone}>
         <input
           type="tel"
-          placeholder="Phone Number *"
+          placeholder="Enter your phone number"
           value={form.phone}
           onChange={update('phone')}
-          className={inputClass('phone')}
+          className={fieldInputClass}
         />
-        <FieldError field="phone" />
-      </div>
+      </Field>
 
-      <div>
+      <Field icon={MapPin} label="City *" error={errors.city}>
         <input
           type="text"
-          placeholder="City *"
+          placeholder="Enter your city"
           value={form.city}
           onChange={update('city')}
-          className={inputClass('city')}
+          className={fieldInputClass}
         />
-        <FieldError field="city" />
-      </div>
+      </Field>
 
-      <div>
-        <label className="flex items-center gap-1.5 text-sm text-ink-soft mb-1.5">
-          <Calendar className="size-4 text-brand-500" />
-          Appointment Date *
-        </label>
-        <input type="date" value={form.date} onChange={update('date')} className={inputClass('date')} />
-        <FieldError field="date" />
-      </div>
+      <Field icon={Calendar} label="Appointment Date *" error={errors.date}>
+        <input type="date" value={form.date} onChange={update('date')} className={fieldInputClass} />
+      </Field>
 
-      <textarea
-        placeholder="Message"
-        value={form.message}
-        onChange={update('message')}
-        rows={compact ? 2 : 3}
-        className={`${inputClass('message')} resize-none`}
-      />
+      <Field icon={MessageSquare} label="Message" alignTop>
+        <textarea
+          placeholder="How can we help you?"
+          value={form.message}
+          onChange={update('message')}
+          rows={compact ? 2 : 3}
+          className={`${fieldInputClass} resize-none`}
+        />
+      </Field>
 
       {status === 'error' && (
         <p className="flex items-center gap-1.5 text-sm text-red-500">
@@ -153,17 +149,23 @@ export default function BookingForm({ compact = false }) {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full gradient-brand text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/45 hover:scale-[1.01] active:scale-100 transition-all disabled:opacity-70 flex items-center justify-center gap-2"
+        className="w-full gradient-brand text-white font-semibold py-3.5 rounded-2xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/45 hover:scale-[1.01] active:scale-100 transition-all disabled:opacity-70 flex items-center justify-center gap-2"
       >
         {status === 'sending' ? (
           <>
             <Loader2 className="size-4 animate-spin" /> Sending...
           </>
         ) : (
-          'Submit'
+          <>
+            <Send className="size-4" strokeWidth={2.25} />
+            Submit
+          </>
         )}
       </button>
-      <p className="text-xs text-ink-soft text-center">We'll get back to you within 2 hours during business hours</p>
+      <p className="flex items-center justify-center gap-1.5 text-xs text-ink-soft text-center">
+        <ShieldCheck className="size-3.5 text-brand-400 shrink-0" />
+        We'll get back to you within 2 hours during business hours
+      </p>
     </form>
   )
 }

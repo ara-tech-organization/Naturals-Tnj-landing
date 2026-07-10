@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, ShieldCheck, Sparkles, Star } from 'lucide-react'
+import { Calendar, MessageCircle, Phone, ShieldCheck, Sparkles, Star } from 'lucide-react'
 import heroImg from '../assets/hero_bgimage.jpg'
 import BookingForm from './BookingForm'
 import { site } from '../siteConfig'
@@ -84,11 +84,24 @@ export default function Hero() {
               id="book"
               className="rounded-3xl bg-white/95 backdrop-blur-xl border border-white shadow-2xl shadow-ink/30 pt-7 pb-6 px-6 scroll-mt-28"
             >
-              <h2 className="text-xl font-bold text-ink text-center mb-1">Book a Consultation</h2>
-              <p className="text-sm text-ink-soft text-center mb-5">
-                Tell us what you're looking for and we'll get back to you within 2 hours during
-                business hours.
-              </p>
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-3">
+                  <div className="size-11 rounded-full bg-brand-100 flex items-center justify-center shrink-0">
+                    <Calendar className="size-5 text-brand-600" strokeWidth={2.25} />
+                  </div>
+                  <h2 className="text-xl font-bold text-ink">Book a Consultation</h2>
+                </div>
+                <p className="text-sm text-ink-soft mt-2">
+                  Tell us what you're looking for and we'll get back to you within 2 hours during
+                  business hours.
+                </p>
+              </div>
+
+              <div className="relative flex items-center justify-center my-5">
+                <div className="w-full h-px bg-brand-100" />
+                <span className="absolute size-2.5 rounded-full border-2 border-brand-400 bg-white" />
+              </div>
+
               <BookingForm compact />
             </div>
           </div>
