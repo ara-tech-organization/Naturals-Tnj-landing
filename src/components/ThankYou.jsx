@@ -6,7 +6,7 @@ export default function ThankYou() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-brand-50/60 to-white px-5 py-20">
       <div className="max-w-md w-full text-center">
-        <div className="mx-auto size-16 rounded-full gradient-brand flex items-center justify-center shadow-lg shadow-brand-600/30">
+        <div className="mx-auto size-16 rounded-full gradient-brand flex items-center justify-center shadow-lg shadow-brand-600/30 animate-float">
           <Check className="size-8 text-white" strokeWidth={3} />
         </div>
 
@@ -31,7 +31,7 @@ export default function ThankYou() {
           </a>
           <a
             href={site.phoneLink}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-brand-200 text-brand-700 font-semibold px-7 py-3.5 rounded-full hover:bg-brand-50 transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-brand-200 text-brand-700 font-semibold px-7 py-3.5 rounded-full hover:bg-brand-50 hover:border-brand-300 hover:-translate-y-0.5 transition-all"
           >
             <Phone className="size-4.5" />
             Call Us Instead

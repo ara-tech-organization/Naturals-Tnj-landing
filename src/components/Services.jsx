@@ -47,8 +47,16 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-10 lg:py-14 bg-brand-50/40 overflow-hidden">
+    <section id="services" className="relative py-10 lg:py-14 bg-gradient-to-br from-brand-50 via-white to-accent-50/40 overflow-hidden">
       <div className="absolute -top-24 -left-24 size-96 rounded-full bg-brand-300/20 blur-3xl -z-0" />
+      <div className="absolute -bottom-24 -right-24 size-96 rounded-full bg-accent-300/20 blur-3xl -z-0" />
+      <div
+        className="absolute inset-0 -z-0 opacity-[0.6]"
+        style={{
+          backgroundImage: 'radial-gradient(var(--color-brand-300) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="text-center max-w-2xl mx-auto mb-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-100/80 text-brand-700 text-xs font-semibold px-4 py-1.5 mb-5">

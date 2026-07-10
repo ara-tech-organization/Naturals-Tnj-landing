@@ -70,7 +70,11 @@ export default function Navbar() {
     >
       <nav className="mx-auto max-w-7xl px-5 lg:px-8 flex items-center justify-between py-2">
         <a href="#home" className="flex items-center shrink-0">
-          <img src={logo} alt="Naturals Beauty Salon Thanjavur" className="h-18 w-auto object-contain" />
+          <img
+            src={logo}
+            alt="Naturals Beauty Salon Thanjavur"
+            className="h-18 w-auto object-contain transition-transform duration-300 hover:scale-105"
+          />
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
@@ -96,9 +100,9 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-10">
           <a
             href={site.phoneLink}
-            className="flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white transition-colors"
+            className="group flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white transition-colors"
           >
-            <Phone className="size-4" strokeWidth={2.25} />
+            <Phone className="size-4 transition-transform duration-300 group-hover:rotate-12" strokeWidth={2.25} />
             {site.phoneDisplay}
           </a>
           <a

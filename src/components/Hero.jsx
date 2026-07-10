@@ -51,9 +51,9 @@ export default function Hero() {
               href={site.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/40 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-white/10 backdrop-blur-sm transition-colors flex items-center gap-2"
+              className="group border border-white/40 text-white font-semibold px-7 py-3.5 rounded-full hover:bg-white/10 hover:border-white/70 backdrop-blur-sm transition-all flex items-center gap-2"
             >
-              <MessageCircle className="size-4.5" />
+              <MessageCircle className="size-4.5 transition-transform duration-300 group-hover:scale-110" />
               Chat on WhatsApp
             </a>
           </div>

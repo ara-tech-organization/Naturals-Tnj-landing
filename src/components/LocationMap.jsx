@@ -7,8 +7,8 @@ export default function LocationMap() {
     <section className="pb-20 lg:pb-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="relative rounded-3xl overflow-hidden border border-brand-100 shadow-xl shadow-brand-900/10">
-          <div className="absolute top-5 left-5 z-10 flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg px-4 py-3 max-w-xs">
-            <div className="size-10 rounded-xl gradient-brand flex items-center justify-center shrink-0">
+          <div className="group absolute top-5 left-5 z-10 flex items-center gap-3 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg px-4 py-3 max-w-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5">
+            <div className="size-10 rounded-xl gradient-brand flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
               <MapPin className="size-5 text-white" strokeWidth={2.25} />
             </div>
             <div className="text-sm">

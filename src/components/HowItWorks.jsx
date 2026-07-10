@@ -42,13 +42,13 @@ export default function HowItWorks() {
           {STEPS.map(({ number, icon: Icon, title, desc }, i) => (
             <Fragment key={title}>
               <Reveal delay={i * 120} className="flex-1">
-                <div className="relative h-full rounded-2xl bg-white border border-brand-100 shadow-sm hover:shadow-lg hover:shadow-brand-900/5 hover:-translate-y-1 transition-all duration-300 pt-8 pb-7 px-6 text-center">
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 size-8 rounded-full gradient-brand text-white text-sm font-bold flex items-center justify-center shadow-md shadow-brand-900/20">
+                <div className="group relative h-full rounded-2xl bg-white border border-brand-100 shadow-sm hover:shadow-lg hover:shadow-brand-900/5 hover:-translate-y-1 transition-all duration-300 pt-8 pb-7 px-6 text-center">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 size-8 rounded-full gradient-brand text-white text-sm font-bold flex items-center justify-center shadow-md shadow-brand-900/20 transition-transform duration-300 group-hover:scale-110">
                     {number.replace('0', '')}
                   </span>
 
-                  <div className="mx-auto mt-3 size-14 rounded-2xl bg-brand-50 flex items-center justify-center">
-                    <Icon className="size-6 text-brand-600" strokeWidth={2} />
+                  <div className="mx-auto mt-3 size-14 rounded-2xl bg-brand-50 flex items-center justify-center transition-colors duration-300 group-hover:bg-brand-100">
+                    <Icon className="size-6 text-brand-600 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" strokeWidth={2} />
                   </div>
 
                   <h3 className="mt-5 font-semibold text-lg text-ink">{title}</h3>

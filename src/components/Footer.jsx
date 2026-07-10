@@ -39,7 +39,11 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-16 pb-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src={logo} alt={site.name} className="h-16 w-auto object-contain" />
+            <img
+              src={logo}
+              alt={site.name}
+              className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
+            />
           </div>
           <p className="text-sm leading-relaxed max-w-xs">
             Thanjavur's trusted salon since 2023 — hair, bridal &amp; grooming experts serving
@@ -51,7 +55,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors"
+              className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
               <InstagramIcon className="size-4" />
             </a>
@@ -60,7 +64,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 transition-colors"
+              className="size-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
             >
               <FacebookIcon className="size-4" />
             </a>
@@ -72,7 +76,7 @@ export default function Footer() {
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-1 text-sm">
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="hover:text-white transition-colors">
+                <a href={l.href} className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">
                   {l.label}
                 </a>
               </li>
@@ -85,7 +89,7 @@ export default function Footer() {
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-1 text-sm">
             {SERVICES.map((s) => (
               <li key={s}>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">
                   {s}
                 </a>
               </li>
@@ -102,13 +106,13 @@ export default function Footer() {
             </li>
             <li className="flex gap-2.5">
               <Phone className="size-4.5 text-brand-300 shrink-0 mt-0.5" />
-              <a href={site.phoneLink} className="hover:text-white transition-colors">
+              <a href={site.phoneLink} className="hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
                 {site.phoneDisplay}
               </a>
             </li>
             <li className="flex gap-2.5">
               <Mail className="size-4.5 text-brand-300 shrink-0 mt-0.5" />
-              <a href={`mailto:${site.email}`} className="hover:text-white transition-colors">
+              <a href={`mailto:${site.email}`} className="hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
                 {site.email}
               </a>
             </li>

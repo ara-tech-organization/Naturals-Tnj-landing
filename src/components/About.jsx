@@ -65,6 +65,7 @@ export default function About() {
             {/* orbiting/floating decorative rings */}
             <div className="absolute -top-6 -right-4 size-24 rounded-full border-2 border-dashed border-brand-300/50 animate-spin-slow -z-0" />
             <div className="absolute -bottom-8 -left-4 size-16 rounded-full bg-accent-400/15 blur-xl animate-float -z-0" />
+            <div className="absolute -bottom-8 -right-4 size-20 rounded-full bg-brand-400/20 blur-xl animate-float -z-0" />
 
             <div className="relative animate-sway">
               <div className="absolute -inset-4 gradient-brand rounded-[2.5rem] opacity-20 blur-2xl -z-10" />
@@ -74,6 +75,7 @@ export default function About() {
                   alt="Stylist at Naturals Beauty Salon Thanjavur"
                   className="w-full h-full object-cover animate-breathe"
                 />
+                <div className="absolute inset-0 bg-brand-600/25" />
               </div>
 
               <div className="absolute -bottom-5 -left-6 sm:-left-10 bg-white rounded-2xl shadow-xl shadow-brand-900/15 ring-1 ring-brand-100 px-5 py-4 flex items-center gap-3 animate-float">

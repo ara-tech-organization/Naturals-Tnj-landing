@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { HelpCircle, Minus, Plus } from 'lucide-react'
+import { HelpCircle, Minus, Plus, Sparkles } from 'lucide-react'
 import Reveal from './Reveal'
 
 const FAQS = [
@@ -29,9 +29,20 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section id="faq" className="relative py-10 lg:py-14 overflow-hidden">
-      <div className="absolute top-10 left-0 size-72 rounded-full bg-brand-300/10 blur-3xl -z-0" />
-      <div className="absolute bottom-0 right-0 size-72 rounded-full bg-accent-400/10 blur-3xl -z-0" />
+    <section id="faq" className="relative py-10 lg:py-14 bg-gradient-to-b from-brand-50/50 via-white to-brand-50/40 overflow-hidden">
+      <div className="absolute top-10 left-0 size-72 rounded-full bg-brand-300/15 blur-3xl -z-0" />
+      <div className="absolute bottom-0 right-0 size-72 rounded-full bg-accent-400/15 blur-3xl -z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-56 rounded-full bg-brand-200/15 blur-3xl -z-0" />
+      <Sparkles className="absolute top-8 right-8 size-6 text-brand-300/40 animate-float -z-0" strokeWidth={1.5} />
+      <HelpCircle className="absolute bottom-10 left-8 size-8 text-accent-300/30 animate-float -z-0" strokeWidth={1.5} />
+      <svg
+        className="absolute -top-1 left-0 w-full text-brand-100/60 -z-0"
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+        fill="currentColor"
+      >
+        <path d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,32 L1440,0 L0,0 Z" />
+      </svg>
       <div className="relative mx-auto max-w-3xl px-5 lg:px-8">
         <Reveal className="text-center mb-8">
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-100/80 text-brand-700 text-xs font-semibold px-4 py-1.5 mb-5">
@@ -85,6 +96,14 @@ export default function FAQ() {
           })}
         </Reveal>
       </div>
+      <svg
+        className="absolute -bottom-1 left-0 w-full text-brand-100/60 -z-0 rotate-180"
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+        fill="currentColor"
+      >
+        <path d="M0,32 C240,64 480,0 720,16 C960,32 1200,64 1440,32 L1440,0 L0,0 Z" />
+      </svg>
     </section>
   )
 }
