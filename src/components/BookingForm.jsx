@@ -20,7 +20,7 @@ function Field({ icon: Icon, label, error, alignTop = false, children }) {
   return (
     <div>
       <div
-        className={`flex gap-3 rounded-2xl border bg-white px-4 py-3 transition-all ${
+        className={`flex gap-2.5 rounded-2xl border bg-white px-3.5 py-2.5 transition-all ${
           alignTop ? 'items-start' : 'items-center'
         } ${
           error
@@ -28,8 +28,8 @@ function Field({ icon: Icon, label, error, alignTop = false, children }) {
             : 'border-brand-100 focus-within:border-brand-400 focus-within:ring-4 focus-within:ring-brand-100'
         }`}
       >
-        <div className={`size-9 rounded-full bg-brand-50 flex items-center justify-center shrink-0 ${alignTop ? 'mt-0.5' : ''}`}>
-          <Icon className="size-4.5 text-brand-500" strokeWidth={2.25} />
+        <div className={`size-8 rounded-full bg-brand-50 flex items-center justify-center shrink-0 ${alignTop ? 'mt-0.5' : ''}`}>
+          <Icon className="size-4 text-brand-500" strokeWidth={2.25} />
         </div>
         <div className="flex-1 min-w-0">
           <label className="block text-sm font-semibold text-ink">{label}</label>
@@ -94,7 +94,7 @@ export default function BookingForm({ compact = false }) {
   const fieldInputClass = 'w-full bg-transparent outline-none border-0 p-0 text-sm text-ink placeholder:text-ink-soft/50'
 
   return (
-    <form onSubmit={handleSubmit} noValidate className={compact ? 'space-y-3' : 'space-y-4'}>
+    <form onSubmit={handleSubmit} noValidate className={compact ? 'space-y-2.5' : 'space-y-3.5'}>
       <Field icon={User} label="Name *" error={errors.name}>
         <input
           type="text"
@@ -149,7 +149,7 @@ export default function BookingForm({ compact = false }) {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full gradient-brand text-white font-semibold py-3.5 rounded-2xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/45 hover:scale-[1.01] active:scale-100 transition-all disabled:opacity-70 flex items-center justify-center gap-2"
+        className="w-full gradient-brand text-white font-semibold py-3 rounded-2xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/45 hover:scale-[1.01] active:scale-100 transition-all disabled:opacity-70 flex items-center justify-center gap-2"
       >
         {status === 'sending' ? (
           <>
