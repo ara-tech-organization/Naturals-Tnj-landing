@@ -3,6 +3,7 @@ import { Menu, Phone, X } from 'lucide-react'
 import logo from '../assets/logo.png'
 import { site } from '../siteConfig'
 import { scrollToId } from '../utils/scrollToId'
+import { currentRoute, navigate } from '../utils/navigate'
 
 const LINKS = [
   { id: 'about', label: 'About' },
@@ -55,6 +56,18 @@ export default function Navbar() {
     setActive(id)
   }
 
+  const goToHome = (e) => {
+    e.preventDefault()
+    setOpen(false)
+    if (currentRoute() !== '/') {
+      navigate('/')
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      scrollToId('home', '/')
+    }
+    setActive('')
+  }
+
   const goToBook = (e) => {
     e.preventDefault()
     setOpen(false)
@@ -69,7 +82,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-5 lg:px-8 flex items-center justify-between py-2">
-        <a href="#home" className="flex items-center shrink-0">
+        <a href="/" onClick={goToHome} className="flex items-center shrink-0">
           <img
             src={logo}
             alt="Naturals Beauty Salon Thanjavur"

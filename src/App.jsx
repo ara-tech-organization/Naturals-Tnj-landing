@@ -12,6 +12,8 @@ import LocationMap from './components/LocationMap'
 import Footer from './components/Footer'
 import StickyMobileBar from './components/StickyMobileBar'
 import ThankYou from './components/ThankYou'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import TermsConditions from './components/TermsConditions'
 import { currentRoute } from './utils/navigate'
 
 function App() {
@@ -25,6 +27,14 @@ function App() {
 
   if (path === '/thank-you') {
     return <ThankYou />
+  }
+
+  if (path === '/privacy-policy') {
+    return <PrivacyPolicy />
+  }
+
+  if (path === '/terms-conditions') {
+    return <TermsConditions />
   }
 
   return (

@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import logo from '../assets/logo.png'
 import { site } from '../siteConfig'
+import { currentRoute, navigate } from '../utils/navigate'
 
 function InstagramIcon(props) {
   return (
@@ -38,13 +39,23 @@ export default function Footer() {
     <footer className="bg-ink text-white/70 pb-24 lg:pb-10">
       <div className="mx-auto max-w-7xl px-5 lg:px-8 pt-16 pb-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
         <div>
-          <div className="flex items-center gap-2 mb-4">
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault()
+              if (currentRoute() !== '/') {
+                navigate('/')
+              }
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="flex items-center gap-2 mb-4 w-fit"
+          >
             <img
               src={logo}
               alt={site.name}
               className="h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
             />
-          </div>
+          </a>
           <p className="text-sm leading-relaxed max-w-xs">
             Thanjavur's trusted salon since 2023 — hair, bridal &amp; grooming experts serving
             10,000+ happy clients.
@@ -121,9 +132,41 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-5 px-5 lg:px-8">
-        <p className="text-center text-xs text-white/50">
-          © {new Date().getFullYear()} {site.name} Thanjavur. All rights reserved.
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-xs text-white/50 order-1 sm:order-none">
+            © {new Date().getFullYear()} {site.name} Thanjavur. All rights reserved.
+          </p>
+
+          <div className="flex items-center gap-x-4 text-xs text-white/50 order-3 sm:order-none">
+            <a
+              href="/privacy-policy"
+              onClick={(e) => {
+                e.preventDefault()
+                navigate('/privacy-policy')
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+              className="hover:text-white transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-white/20">|</span>
+            <a
+              href="/terms-conditions"
+              onClick={(e) => {
+                e.preventDefault()
+                navigate('/terms-conditions')
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
+              className="hover:text-white transition-colors"
+            >
+              Terms &amp; Conditions
+            </a>
+          </div>
+
+          <p className="text-xs text-white/50 order-2 sm:order-none">
+            <span className="text-brand-400">💜</span> Crafted by ARA Discovertechnology
+          </p>
+        </div>
       </div>
     </footer>
   )
