@@ -1,8 +1,4 @@
-import { ArrowRight, Check, Droplets, Gem, Scissors, Sparkles, UserRound } from 'lucide-react'
-import hairstyleImg from '../assets/hairstyle.jpg'
-import makeupImg from '../assets/makeup.jpeg'
-import mensImg from '../assets/mens_grooming.jpeg'
-import skincareImg from '../assets/skincare.jpeg'
+import { ArrowRight, Droplets, Gem, Scissors, Sparkles, UserRound } from 'lucide-react'
 import { site } from '../siteConfig'
 import Reveal from './Reveal'
 
@@ -11,7 +7,6 @@ const SERVICES = [
     icon: Scissors,
     title: 'Hair Care & Styling',
     price: '₹500',
-    image: hairstyleImg,
     popular: true,
     desc: 'Expert cuts, coloring, treatments, and styling for all hair types.',
     items: ['Haircuts & Trims', 'Hair Coloring', 'Keratin Treatment', 'Hair Spa'],
@@ -20,7 +15,6 @@ const SERVICES = [
     icon: Gem,
     title: 'Bridal Services',
     price: '₹8,000',
-    image: makeupImg,
     popular: true,
     desc: 'Complete bridal makeover packages for your special day.',
     items: ['Bridal Makeup', 'Mehendi', 'Saree Draping', 'Pre-bridal Package'],
@@ -29,7 +23,6 @@ const SERVICES = [
     icon: Droplets,
     title: 'Skin Care',
     price: '₹400',
-    image: skincareImg,
     popular: false,
     desc: 'Advanced facial treatments, cleanup, and skin rejuvenation.',
     items: ['Facials', 'Cleanup', 'De-tan', 'Anti-aging'],
@@ -38,7 +31,6 @@ const SERVICES = [
     icon: UserRound,
     title: "Men's Grooming",
     price: '₹200',
-    image: mensImg,
     popular: false,
     desc: 'Premium grooming services tailored for the modern man.',
     items: ['Haircut & Styling', 'Beard Grooming', 'Facial Care', 'Hair Color'],
@@ -67,59 +59,50 @@ export default function Services() {
             Everything You Need for a Complete Beauty Transformation
           </h2>
           <p className="mt-4 text-ink-soft text-lg">
-            Transparent, upfront pricing — no surprises when you arrive. Hover a card to see what's included.
+            Transparent, upfront pricing — no surprises when you arrive.
           </p>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SERVICES.map(({ icon: Icon, title, price, image, popular, desc, items }, i) => (
-            <Reveal key={title} delay={i * 100} className="[perspective:1500px] h-96">
-              <div className="group relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
-                {/* Front face */}
-                <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-sm group-hover:shadow-2xl group-hover:shadow-brand-900/20 transition-shadow duration-500 [backface-visibility:hidden]">
-                  <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-ink/10" />
+        <div className="flex flex-col divide-y divide-brand-100 rounded-[1.75rem] bg-white border border-brand-100 shadow-sm overflow-hidden">
+          {SERVICES.map(({ icon: Icon, title, price, popular, desc, items }, i) => (
+            <Reveal key={title} delay={i * 90}>
+              <div className="group relative flex flex-col sm:flex-row sm:items-center gap-5 px-6 sm:px-8 py-6 hover:bg-brand-50/60 transition-colors duration-300">
+                <span className="pointer-events-none absolute left-0 top-0 bottom-0 w-1 gradient-brand scale-y-0 group-hover:scale-y-100 origin-center transition-transform duration-300" />
 
-                  {popular && (
-                    <span className="absolute top-4 right-4 bg-gradient-to-r from-accent-400 to-accent-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md ring-1 ring-white/30">
-                      Popular
-                    </span>
-                  )}
+                <div className="size-12 rounded-xl gradient-brand flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                  <Icon className="size-5.5 text-white" strokeWidth={2.25} />
+                </div>
 
-                  <div className="absolute top-4 left-4 size-10 rounded-xl gradient-brand flex items-center justify-center shadow-lg">
-                    <Icon className="size-5 text-white" strokeWidth={2.25} />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <h3 className="font-semibold text-lg text-ink">{title}</h3>
+                    {popular && (
+                      <span className="bg-gradient-to-r from-accent-400 to-accent-600 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
+                        Popular
+                      </span>
+                    )}
                   </div>
-
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <h3 className="text-lg font-semibold text-white">{title}</h3>
-                    <p className="mt-1.5 text-sm text-white/80 leading-relaxed">{desc}</p>
-                    <p className="mt-3 text-brand-200 font-semibold">Starting at {price}</p>
+                  <p className="mt-1 text-sm text-ink-soft leading-relaxed">{desc}</p>
+                  <div className="mt-2.5 flex flex-wrap gap-1.5">
+                    {items.map((item) => (
+                      <span key={item} className="text-xs text-brand-700 bg-brand-50 border border-brand-100 rounded-full px-2.5 py-1">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Back face */}
-                <div className="absolute inset-0 rounded-3xl gradient-brand p-6 flex flex-col [backface-visibility:hidden] [transform:rotateY(180deg)] shadow-xl">
-                  <h3 className="text-lg font-semibold text-white">{title}</h3>
-                  <p className="mt-1 text-xs text-white/70">What's included</p>
-
-                  <ul className="mt-4 space-y-2.5 flex-1">
-                    {items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm text-white/95">
-                        <Check className="size-4 text-white/80 shrink-0" strokeWidth={2.5} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex items-center justify-between gap-2 pt-3 border-t border-white/20">
-                    <span className="font-semibold text-white">From {price}</span>
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-1.5 bg-white text-brand-700 text-xs font-semibold px-3.5 py-2 rounded-full hover:scale-105 transition-transform"
-                    >
-                      Book Now <ArrowRight className="size-3.5" />
-                    </a>
+                <div className="flex items-center justify-between sm:flex-col sm:items-end gap-1 sm:gap-2 sm:pl-4 sm:border-l border-brand-100 shrink-0">
+                  <div className="sm:text-right">
+                    <p className="text-xs text-ink-soft/70">Starting at</p>
+                    <p className="font-bold text-brand-700">{price}</p>
                   </div>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-1.5 text-brand-700 text-xs font-semibold px-3.5 py-2 rounded-full ring-1 ring-brand-200 group-hover:gradient-brand group-hover:text-white group-hover:ring-transparent transition-all"
+                  >
+                    Book Now <ArrowRight className="size-3.5" />
+                  </a>
                 </div>
               </div>
             </Reveal>
